@@ -1,13 +1,15 @@
-# So-Lien-Lac-Dien-Tu
-Đồ án Lập Trình Hướng Đối Tượng Java (Core Java, Swing, MySQL): Phần mềm sổ liên lạc điện tử
+# So Lien Lac Dien Tu
 
-# Database
++ Đồ án Lập Trình Hướng Đối Tượng Java (Core Java, Swing, MySQL): Phần mềm sổ liên lạc điện tử
+
+# Database script
+```sql
 create database schoolsystem;
 use schoolsystem;
 set @@sql_mode='no_engine_substitution';
 create table monhoc
 (
-	mamonhoc varchar(20) not null,
+    mamonhoc varchar(20) not null,
     tenmonhoc nvarchar(30) not null,
     ghichu nvarchar(255),
     malop varchar(20) not null,
@@ -17,7 +19,7 @@ create table monhoc
 
 create table giaovien
 (
-	magiaovien varchar(20) not null primary key,
+    magiaovien varchar(20) not null primary key,
     ho nvarchar(30) not null,
     ten nvarchar(10) not null,
     gioitinh boolean,
@@ -27,7 +29,7 @@ create table giaovien
 
 create table lop
 (
-	malop varchar(20) not null primary key,
+    malop varchar(20) not null primary key,
     tenlop nvarchar(20),
     khoa varchar(30),
     siso int,
@@ -37,7 +39,7 @@ create table lop
 
 create table hocsinh
 (
-	mahocsinh varchar(20) not null primary key,
+    mahocsinh varchar(20) not null primary key,
     ho nvarchar(30) not null,
     ten nvarchar(10) not null,
     ngaysinh timestamp,
@@ -49,7 +51,7 @@ create table hocsinh
 
 create table diem
 (
-	diem float not null,
+    diem float not null,
     mahocsinh varchar(20) not null,
     mamonhoc varchar(20) not null,
     loai int,
@@ -60,7 +62,7 @@ create table diem
 
 create table thongbaocanhan
 (
-	mathongbao varchar(20) not null primary key,
+    mathongbao varchar(20) not null primary key,
     noidung text(255) not null,
     ngay timestamp,
     magiaovien varchar(20) not null,
@@ -82,7 +84,7 @@ create table mailphuhuynh
 
 create table thongbaochung
 (
-	mathongbao varchar(20) not null primary key,
+    mathongbao varchar(20) not null primary key,
     noidung text(255) not null,
     ngay timestamp,
     magiaovien varchar(20) not null,
@@ -90,3 +92,18 @@ create table thongbaochung
     foreign key(magiaovien) references giaovien(magiaovien),
     foreign key(malop) references lop(malop)
 );
+```
+
+# Hướng dẫn clone và cài đặt project
+
++ Clone project về local, import vào Netbean IDE
+
++ Tìm hiểu và cài đặt thư viện jCalendar.
+
++ Tạo database trong MySQL
+
++ Run project trong Netbean 
+
+
+
+
